@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\OtpNumber;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -12,6 +13,7 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class
         ]);
 
+        OtpNumber::factory()->count(10)->create();
         // \App\Models\User::factory(10)->create();
     }
 }
