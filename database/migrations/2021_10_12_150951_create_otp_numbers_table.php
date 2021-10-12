@@ -15,9 +15,9 @@ class CreateOtpNumbersTable extends Migration
     {
         Schema::create('otp_numbers', function (Blueprint $table) {
             $table->id();
-            $table->integer('number')->unsigned();
+            $table->string('number');
             $table->string('otp_from');
-            $table->bigInteger('otp_number')->unsigned();
+            $table->integer('otp_number')->unsigned();
             $table->dateTime('datetime')->default(now());
             $table->timestamps();
         });
