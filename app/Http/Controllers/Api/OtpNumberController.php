@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class OtpNumberController extends Controller
 {
     public function index() {
-        $otpNumbers = OtpNumber::paginate(20);
+        $otpNumbers = OtpNumber::latest()->paginate(20);
 
         return response()->json(['data' => $otpNumbers]);
     }

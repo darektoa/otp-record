@@ -20,7 +20,7 @@ class HomeController extends Controller
 
     public function index()
     {
-        $otpNumbers = OtpNumber::paginate(20);
+        $otpNumbers = OtpNumber::latest()->paginate(20);
 
         return view('home', compact('otpNumbers'));
     }
