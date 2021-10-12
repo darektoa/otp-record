@@ -13,7 +13,7 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class
         ]);
 
-        OtpNumber::factory()->count(10)->create();
+        OtpNumber::factory()->count(50)->create();
         // \App\Models\User::factory(10)->create();
     }
 }
