@@ -18,6 +18,7 @@ use Illuminate\Support\Facades\Route;
 Route::post('/login', [AuthController::class, 'login']);
 Route::get('/logout', [AuthController::class, 'logout']);
 
-Route::middleware(['auth:api'])->group(function() {
-    // Route::post('/otp-number', [OtpNumberController::class, 'store']);
+Route::middleware(['auth.api'])->group(function() {
+    Route::get('/otp-number', [OtpNumberController::class, 'index']);
+    Route::post('/otp-number', [OtpNumberController::class, 'store']);
 });
