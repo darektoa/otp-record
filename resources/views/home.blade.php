@@ -26,9 +26,9 @@
                         </thead>
                         <tbody>
 
-                            @foreach(App\Models\OtpNumber::all() as $item)
+                            @foreach($otpNumbers as $item)
                             <tr>
-                                <th scope="row">{{ $loop->iteration }}</th>
+                                <th scope="row">{{ $loop->iteration + (request()->page > 1 ? request()->page * 20 : 0) }}</th>
                                 <td>{{ $item->number }}</td>
                                 <td>{{ $item->otp_from }}</td>
                                 <td>{{ $item->otp_number }}</td>
@@ -36,7 +36,9 @@
                             </tr>
                             @endforeach
 
-                      </table>
+                        </tbody>
+                    </table>
+                    {{ $otpNumbers->links() }}
                 </div>
             </div>
         </div>
